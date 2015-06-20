@@ -20,6 +20,7 @@ namespace WindowsFormApplication1 {
 			InitializeComponent();
 			Aplikacja_poczatek();
 			
+			
 			//
 			//TODO: Add the constructor code here
 			//
@@ -41,9 +42,21 @@ namespace WindowsFormApplication1 {
 
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Button^  button2;
-	private: System::Windows::Forms::TextBox^  textBox1;
-	private: System::Windows::Forms::RadioButton^  radioButton1;
+
+
 	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::Button^  button3;
+	private: System::Windows::Forms::DataGridView^  dataGridView1;
+	private: System::Windows::Forms::DataGridViewButtonColumn^  Column1;
+	private: System::Windows::Forms::DataGridViewButtonColumn^  Column2;
+	private: System::Windows::Forms::DataGridViewButtonColumn^  Column3;
+	private: System::Windows::Forms::DataGridViewButtonColumn^  Column4;
+	private: System::Windows::Forms::DataGridViewButtonColumn^  Column5;
+
+
+
+
+
 
 
 
@@ -65,25 +78,31 @@ namespace WindowsFormApplication1 {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
+			this->Column5 = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(805, 40);
+			this->label1->Location = System::Drawing::Point(576, 78);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(35, 13);
+			this->label1->Size = System::Drawing::Size(41, 13);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"label1";
+			this->label1->Text = L"Poziom";
 			// 
 			// button1
 			// 
 			this->button1->AutoSize = true;
 			this->button1->BackColor = System::Drawing::SystemColors::Control;
-			this->button1->Location = System::Drawing::Point(778, 65);
+			this->button1->Location = System::Drawing::Point(579, 106);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(94, 23);
 			this->button1->TabIndex = 2;
@@ -93,7 +112,7 @@ namespace WindowsFormApplication1 {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(778, 294);
+			this->button2->Location = System::Drawing::Point(579, 340);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 3;
@@ -101,41 +120,81 @@ namespace WindowsFormApplication1 {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
 			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(357, 40);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 20);
-			this->textBox1->TabIndex = 4;
-			// 
-			// radioButton1
-			// 
-			this->radioButton1->AutoSize = true;
-			this->radioButton1->Location = System::Drawing::Point(372, 83);
-			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(85, 17);
-			this->radioButton1->TabIndex = 5;
-			this->radioButton1->TabStop = true;
-			this->radioButton1->Text = L"radioButton1";
-			this->radioButton1->UseVisualStyleBackColor = true;
-			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(805, 27);
+			this->label2->Location = System::Drawing::Point(576, 49);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(35, 13);
+			this->label2->Size = System::Drawing::Size(26, 13);
 			this->label2->TabIndex = 6;
-			this->label2->Text = L"label2";
+			this->label2->Text = L"Imiê";
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(579, 160);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->TabIndex = 7;
+			this->button3->Text = L"START";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Form1::button3_Click);
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+				this->Column1,
+					this->Column2, this->Column3, this->Column4, this->Column5
+			});
+			this->dataGridView1->Location = System::Drawing::Point(100, 49);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(253, 253);
+			this->dataGridView1->RowHeadersVisible = false;
+			this->dataGridView1->TabIndex = 0;
+			this->dataGridView1->ColumnHeadersVisible = false;
+			this->dataGridView1->AllowUserToResizeColumns = false;
+			this->dataGridView1->AllowUserToResizeRows = false;
+			this->dataGridView1->RowTemplate->Height = 50;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::dataGridView1_CellContentClick);
+			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"Column1";
+			this->Column1->Name = L"Column1";
+			this->Column1->Width = 50;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Column2";
+			this->Column2->Name = L"Column2";
+			this->Column2->Width = 50;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"Column3";
+			this->Column3->Name = L"Column3";
+			this->Column3->Width = 50;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Column4";
+			this->Column4->Name = L"Column4";
+			this->Column4->Width = 50;
+			// 
+			// Column5
+			// 
+			this->Column5->HeaderText = L"Column5";
+			this->Column5->Name = L"Column5";
+			this->Column5->Width = 50;
 			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(884, 561);
+			this->ClientSize = System::Drawing::Size(699, 561);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->radioButton1);
-			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
@@ -143,6 +202,7 @@ namespace WindowsFormApplication1 {
 			this->Name = L"Form1";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Form1";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -236,8 +296,9 @@ namespace WindowsFormApplication1 {
 						 label1->Text = "Poziom: Brak";
 					 label2->Text = "Gracz: "+imie->Text;
 				 }
+				 
 #pragma endregion
-		System::Void koniec_okna(System::Object^  sender, System::EventArgs^  e) {
+		private: System::Void koniec_okna(System::Object^  sender, System::EventArgs^  e) {
 		okno_startowe->Close();
 		}
 		private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -246,7 +307,48 @@ namespace WindowsFormApplication1 {
 		private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 					 Close();
 		}
-
+		public: System::Void latwy_poziom(Void){
+							 dataGridView1->ColumnCount = 5;
+							 dataGridView1->RowCount = 5;
+				 }
+		public: System::Int32 latwy_poziom_num(System::Int32 i,System::Int32 j){
+					 System::Int32 a2[10][10];
+					 System::Char a1[10][10];
+					 a2[0][0] = 1;
+					 a2[0][1] = 100;
+					 a2[0][2] = 1;
+					 a2[0][3] = 0;
+					 a2[0][4] = 0;
+					 a2[1][0] = 1;
+					 a2[1][1] = 1;
+					 a2[1][2] = 1;
+					 a2[1][3] = 1;
+					 a2[1][4] = 1;
+					 a2[2][0] = 0;
+					 a2[2][1] = 1;
+					 a2[2][2] = 1;
+					 a2[2][3] = 3;
+					 a2[2][4] = 100;
+					 a2[3][0] = 0;
+					 a2[3][1] = 1;
+					 a2[3][2] = 100;
+					 a2[3][3] = 3;
+					 a2[3][4] = 100;
+					 a2[4][0] = 0;
+					 a2[4][1] = 1;
+					 a2[4][2] = 1;
+					 a2[4][3] = 2;
+					 a2[4][4] = 1;
+					 return a2[i][j];
+		}
+	private: System::Void dataGridView1_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e){
+				 dataGridView1->CurrentCell->Value = latwy_poziom_num(dataGridView1->CurrentCell->RowIndex,dataGridView1->CurrentCell->ColumnIndex);
+	}
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+			this->Controls->Add(this->dataGridView1);
+			latwy_poziom();
+			 
+}
 };
 }
 
